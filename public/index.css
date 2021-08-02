@@ -1,0 +1,80 @@
+.nav-wrapper {
+  padding: 0 2rem;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.course {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course h1 {
+  margin-bottom: 2rem;
+}
+
+.course img {
+  max-width: 600px;
+  height: auto;
+}
+
+.course .price.big {
+  font-size: 2.5rem;
+}
+
+.card-action.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.course-form {
+  margin-bottom: 2rem;
+}
+
+.auth {
+  padding-top: 1rem;
+}
+
+.warning {
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0.3rem 0;
+  background: rgba(255, 255, 0, 0.2);
+  color: red;
+}
+.error {
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0.3rem 0;
+  background: rgba(255, 0, 0, .2);
+  color: red;
+}
+
+.avatar {
+  max-width: 300px;
+  height: auto;
+}
+
+table {
+	border-spacing: 3px;
+	border-collapse: separate;
+}
+td {
+  background: #ffebee;  
+  border-radius: 6px;
+}
+th {
+  background: #ef9a9a;
+  text-align: center;
+  border-radius: 6px;
+}
+.card-content{
+  text-indent: 20px;
+}

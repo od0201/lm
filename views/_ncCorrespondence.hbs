@@ -1,0 +1,131 @@
+<p class="center-align">correspondence on NatashaClub</p>
+{{!-- version for Desktop   --}}
+<div class="hide-on-med-and-down"> 
+<div class="row">
+  <div class="col s12 center-align">
+    <a class="waves-effect waves-light btn " onclick="document.querySelector('#downDesktop').scrollIntoView(false);"><i class="material-icons left">keyboard_arrow_down</i>down</a>
+  </div>
+  {{!-- Correspondence --}}
+  {{#each ncLetters}}
+    <div class="col s12">
+      <div class="card {{#ifeq route 1}}blue{{else}}red{{/ifeq}} lighten-5">
+        <div class="card-content">
+         <p><b><span class="yyyymmddhhmmss">{{date}}</span> - {{id}}  {{#if fit}}- {{fit}}{{/if}}</b></p>
+         {{{text}}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  {{!-- о паре --}}
+  <div class="col s2">
+    <img src='{{photo_m}}'>
+  </div>
+  <div class="col s10">
+    <div class="card red lighten-1">
+      <div class="card-content">        
+        <p>{{ncMales.nick}} ({{idm}})</p>
+        <p>{{ncMales.name}}, {{ncMales.yo}},{{ncMales.country}}</p>
+        <p>-------------------------------------------------</p>
+        <p>{{fif}} ({{idf}})</p>
+
+      </div>
+    </div>
+  </div>  
+  {{!-- Warnings & Errors --}}
+  <div class="col s12">
+  {{#each arrayOfWarnings}}
+   <p class="warning">{{text}}</p>
+  {{/each}}
+  {{#each arrayOfErrors}}
+    <p class="error">{{text}}</p>
+  {{/each}}
+  </div> 
+  {{!-- Textarea --}}
+  {{#if isTextarea}}
+    <form action="/nc/correspondence?idf={{idf}}&idm={{idm}}" method="POST" class="col s12">
+      <input type="hidden" name="_csrf" value="{{csrf}}">
+      <input type="hidden" name="idf" value="{{idf}}">
+      <input type="hidden" name="idm" value="{{idm}}">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea" name="message"></textarea>
+          <label for="icon_prefix2">Message</label>
+        </div>
+        <div class="col s12">
+          <a class="waves-effect waves-light btn" href="{{url}}"><i class="material-icons left">sync</i>update</a>
+          <button class="btn waves-effect waves-light right" type="submit" name="action">Send
+          <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  {{/if}}
+</div>
+</div>
+
+
+{{!-- version for Mobile  --}}
+<div class="hide-on-large-only"> 
+<div class="row">
+  <div class="col s12 center-align">
+    <a class="waves-effect waves-light btn" onclick="document.querySelector('#downMobile').scrollIntoView(false);scrollTo(0,20)"><i class="material-icons left">keyboard_arrow_down</i>down</a>
+  </div>
+  {{!-- Correspondence --}}
+  {{#each ncLetters}}
+    <div class="col s12">
+      <div class="card {{#ifeq route 1}}blue{{else}}red{{/ifeq}} lighten-5">
+        <div class="card-content">
+         <p><b><span class="mmddhhmm">{{date}}</span> {{#if fit}}- {{fit}}{{/if}}</b></p>
+         {{{text}}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  {{!-- о паре --}}
+  <div class="col s12">
+    <img src='{{photo_m}}'>
+  </div>
+  <div class="col s12">
+    <div class="card red lighten-1">
+      <div class="card-content">        
+        <p>{{ncMales.nick}} ({{idm}})</p>
+        <p>{{ncMales.name}}, {{ncMales.yo}},{{ncMales.country}}</p>
+        <p>-----------------------------------</p>
+        <p>{{fif}} ({{idf}})</p>
+
+      </div>
+    </div>
+  </div>  
+  {{!-- Warnings & Errors --}}
+  <div class="col s12">
+  {{#each arrayOfWarnings}}
+   <p class="warning">{{text}}</p>
+  {{/each}}
+  {{#each arrayOfErrors}}
+    <p class="error">{{text}}</p>
+  {{/each}}
+  </div> 
+  {{!-- Textarea --}}
+  {{#if isTextarea}}
+    <form action="/nc/correspondence?idf={{idf}}&idm={{idm}}" method="POST" class="col s12">
+      <input type="hidden" name="_csrf" value="{{csrf}}">
+      <input type="hidden" name="idf" value="{{idf}}">
+      <input type="hidden" name="idm" value="{{idm}}">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2Mobile" class="materialize-textarea" name="message"></textarea>
+          <label for="icon_prefix2Mobile">Message</label>
+        </div>
+        <div class="col s12">
+          <a class="waves-effect waves-light btn" href="{{url}}"><i class="material-icons left">sync</i>update</a>
+          <button class="btn waves-effect waves-light right" type="submit" name="action">Send
+          <i class="material-icons right">send</i>
+        </button>
+        </div>
+      </div>
+    </form>
+  {{/if}}
+</div>
+</div>

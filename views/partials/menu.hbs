@@ -1,0 +1,10 @@
+
+      <li {{#if isHome}}class="active"{{/if}}><a href="/">Главная</a></li>
+      {{#if isAuth}}
+        <li {{#if isNcNewLetters}}class="active"{{/if}}><a href="/nc/newLetters">ncNewLetters</a></li>
+        <li {{#if isProfile}}class="active"{{/if}}><a href="/profile">Профиль</a></li>
+        <li><a href="/auth/logout">Выйти</a></li>
+      {{else}}
+        <li {{#if isLogin}}class="active"{{/if}}><a href="/auth/login#login">Войти</a></li>
+      {{/if}} 
+        <li><a>({{nick}})</a></li>

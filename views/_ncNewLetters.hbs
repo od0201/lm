@@ -1,0 +1,64 @@
+<p class="center-align">new letters on the NatashaClub</p>
+
+
+
+{{!-- version for Desktop   --}}
+<div class="hide-on-med-and-down"> 
+<table class="highlight centered">
+<tbody>
+ <thead>
+</thead>
+  {{#each table}}
+    {{#ifnoteq idt idt_previous}}
+    <tr>
+      <th class="center-align" colspan=5>{{fit}} ({{idt}}),update <span class="yyyymmddhhmmss">{{createdAt}}</span></th>
+    </tr>
+    <tr>
+      <th class="center-align">дата</th>
+      <th class="center-align">клиенты</th>
+      <th class="center-align">клиенты</th>
+      <th class="center-align">на сайте</th>
+      <th class="center-align">вне сайта</th>
+    </tr>
+    {{/ifnoteq}}
+    <tr {{#if isOld}}class="red lighten-4"{{/if}}>
+      <td title='{{max_date}}'><span class="yyyymmddhhmmss">{{datetime}}</span></td>
+      <td>{{fif}}({{no}})</td>
+      <td>{{fim}}</td>
+      <td><a href="/nc/correspondence?idf={{idf}}&idm={{idm}}&msg={{msg}}">✉</a></td>
+      <td><img src="../images/ncSelEStatus/16_{{contact_status2}}.png" ></td>
+    </tr>
+  {{/each}}
+</tbody>
+</table>
+</div>
+
+
+{{!-- version for Mobile  --}}
+<div class="hide-on-large-only"> 
+<table class="highlight centered">
+<tbody>
+ <thead>
+</thead>
+  {{#each table}}
+    {{#ifnoteq idt idt_previous}}
+    <tr>
+      <th class="center-align" colspan=3>{{fit}}, update <span class="mmddhhmm">{{createdAt}}</span></th>
+    </tr>
+    <tr>
+      <th>дата</th>
+      <th>клиенты</th>
+      <th>на сайте</th>
+    </tr>
+    {{/ifnoteq}}
+    <tr {{#if isOld}}class="red lighten-4"{{/if}}>
+      <td><span class="mmdd_hhmm">{{datetime}}</span></td>
+      <td>{{fif}}({{no}})<br>{{fim}}</td>
+      <td>
+        <a href="/nc/correspondence?idf={{idf}}&idm={{idm}}&msg={{msg}}">✉</a>
+        <img src="../images/ncSelEStatus/16_{{contact_status2}}.png" ></td>
+    </tr>
+  {{/each}}
+</tbody>
+</table>
+</div>
